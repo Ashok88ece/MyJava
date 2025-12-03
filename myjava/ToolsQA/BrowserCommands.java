@@ -1,5 +1,7 @@
 package ToolsQA;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -26,7 +28,9 @@ public class BrowserCommands {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		String url = "https://shop.demoqa.com/";
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		String url = "https://www.toolsqa.com";
 		
 		driver.get(url);
 		
