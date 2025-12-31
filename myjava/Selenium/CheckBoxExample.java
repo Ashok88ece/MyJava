@@ -7,37 +7,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CheckBoxExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
-		driver.get("http://www.leafground.com/pages/checkbox.html");
+		driver.get("https://testautomationpractice.blogspot.com/");
 
 		driver.manage().window().maximize();
 		
-		WebElement java = driver.findElement(By.xpath("//*[@id='contentblock']/section/div[1]/div[1]/input"));
-				java.click();
+		Thread.sleep(5000);
+		
+		WebElement element = driver.findElement(By.id("sunday"));
+				element.click();
 				
-		WebElement selenium = driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[2]/div/input"));
-		 boolean seleniumselected = selenium.isSelected();
-		 System.out.println(seleniumselected);
-		 
-		 
-		 WebElement firstelement = driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[3]/div[1]/input"));
-		 
-		 
-		 if(firstelement.isSelected()) {
-			 
-			 firstelement.click();
-		 }
-		 
-		 WebElement secondelement = driver.findElement(By.xpath("//*[@id=\"contentblock\"]/section/div[3]/div[2]/input"));
-		 
-		 if(secondelement.isSelected()) {
-			 secondelement.click();
-		 }
-
+	    Thread.sleep(5000);
+				
+		driver.quit();
 	}
 
 }

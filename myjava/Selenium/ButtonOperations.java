@@ -13,12 +13,12 @@ public class ButtonOperations {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://www.leafground.com/button.xhtml");
+		driver.get("https://testautomationpractice.blogspot.com/");
 		
 		driver.manage().window().maximize();
 		
 		//1. Get Button Position
-		WebElement getPositionButton = driver.findElement(By.id("position"));
+		WebElement getPositionButton = driver.findElement(By.name("start"));
 		
 		Point xypoint = getPositionButton.getLocation();
 		int valuex = xypoint.getX();
@@ -28,22 +28,23 @@ public class ButtonOperations {
 		
 		//2.Find button Color
 		
-		WebElement colorbutton = driver.findElement(By.id("color"));
+		WebElement colorbutton = driver.findElement(By.name("start"));
 		String color = colorbutton.getCssValue("background-color");
 		System.out.println("Button color is :"+color);
 		
 		//3.Find button Size
 		
-		WebElement buttonsize = driver.findElement(By.id("size"));
+		WebElement buttonsize = driver.findElement(By.name("start"));
 		int height = buttonsize.getSize().getHeight();
-		int weight = buttonsize.getSize().getWidth();
-		System.out.println("Height is :"+ height + "Width is :"+weight);
+		int width = buttonsize.getSize().getWidth();
+		System.out.println("Height is :"+ height + " Width is :"+width);
 		
 		//4.Go to Home
 		
-		WebElement homebutton = driver.findElement(By.id("home"));
+		WebElement homebutton = driver.findElement(By.xpath("//*[@id=\"PageList2\"]/div/ul/li[1]/a"));
 		homebutton.click();
 		
+		driver.quit();
 		
 
 	}

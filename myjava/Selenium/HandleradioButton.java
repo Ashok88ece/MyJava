@@ -16,14 +16,31 @@ public class HandleradioButton {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("http://seleniumpractise.blogspot.com/2016/08/how-to-automate-radio-button-in.html");
+		
+		driver.manage().window().maximize();
 
-		List<WebElement>radio = driver.findElements(By.xpath("//input[@name='lang' and @type='radio']"));
+		//Normal Scenario Radio Button
+		
+		driver.findElement(By.id("java")).click();
+		
+		
+		
+		List<WebElement> radio = driver.findElements(By.xpath("//input[@name='lang' and @type='radio']"));
+		
+		
+		int totalradiobtns = radio.size();
+		
+		System.out.println("Total Number of Radio Buttons:"+totalradiobtns);
+		
+		driver.quit();
 	
-		for(int i=0;i<radio.size();i++) {
-			
-			System.out.println(i);
-			
-		}
+		/*
+		 * for(int i=0;i<radio.size();i++) {
+		 * 
+		 * System.out.println("Total Number of Radion Buttons:"+i);
+		 * 
+		 * }
+		 */
 		
 	}
 

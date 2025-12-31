@@ -13,11 +13,13 @@ public class LinkExample {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("http://www.leafground.com/pages/Link.html");
+		driver.get("https://testautomationpractice.blogspot.com/");
 		
 		driver.manage().window().maximize();
 		
-		driver.findElement(By.linkText("Go to Home Page")).click();
+		driver.findElement(By.id("apple")).click();
+		
+		driver.navigate().back();
 		
 		
 		

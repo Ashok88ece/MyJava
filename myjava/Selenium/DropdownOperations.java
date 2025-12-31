@@ -15,32 +15,36 @@ public class DropdownOperations {
 
 		WebDriver driver = new ChromeDriver();
 
-		driver.get("https://demoqa.com/select-menu");
+		driver.get("https://testautomationpractice.blogspot.com/");
 
 		driver.manage().window().maximize();
 
-		WebElement dropdown1 = driver.findElement(By.id("dropdown1"));
+		WebElement dropdown1 = driver.findElement(By.id("country"));
 
 		Select select = new Select(dropdown1);
 		select.selectByIndex(2); 
 		
 		Thread.sleep(3000);
-		select.selectByValue("3");
+		select.selectByValue("france");
 		Thread.sleep(3000);
-		select.selectByVisibleText("Loadrunner");
+		select.selectByVisibleText("Germany");
 		
 		List<WebElement> listofOptions = select.getOptions();
 		int size = listofOptions.size();
 		System.out.println("Number of Options :"+ size);
 		
-		dropdown1.sendKeys("Appium");
+		driver.quit();
 		
-		WebElement multipleselect = driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[6]/select"));
+		//dropdown1.sendKeys("Appium");
 		
-		Select multipleselectbox = new Select(multipleselect);
-		multipleselectbox.selectByIndex(1);
-		multipleselectbox.selectByIndex(2);
-		multipleselectbox.selectByIndex(3);
+		//Multiple Select
+		
+		//WebElement multipleselect = driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[6]/select"));
+		
+		//Select multipleselectbox = new Select(multipleselect);
+		//multipleselectbox.selectByIndex(1);
+		//multipleselectbox.selectByIndex(2);
+		//multipleselectbox.selectByIndex(3);
 
 	}
 

@@ -7,33 +7,33 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TextBoxExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("http://www.leafground.com/pages/Edit.html");
+		driver.get("https://testautomationpractice.blogspot.com/");
 		
 		driver.manage().window().maximize();
 		
+		WebElement namebox = driver.findElement(By.id("name"));
+		namebox.sendKeys("Ashokkkumar");
+		
+		Thread.sleep(3000);
+		
 		WebElement emailbox = driver.findElement(By.id("email"));
-		emailbox.sendKeys("test@gmail.com");
+		emailbox.sendKeys("Test");
 		
-		WebElement appendbox = driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[2]/div/div/input"));
-		appendbox.sendKeys("Test");
-		
-		String value = driver.findElement(By.name("username")).getAttribute("value");
-		System.out.println(value);
+		Thread.sleep(3000);
+		/*
+		 * String value =
+		 * driver.findElement(By.xpath("//*[@id=\"HTML15\"]/h2")).getAttribute("value");
+		 * System.out.println(value);
+		 */
 
-		
-		WebElement clearbox = driver.findElement(By.xpath("//*[@id=\"contentblock\"]/section/div[4]/div/div/input"));
-		clearbox.clear();
-		
-		WebElement disabledbox= driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[5]/div/div/input"));
-		boolean enabled = disabledbox.isEnabled();
-		System.out.println(enabled);
+		driver.quit();
 		
 				}
 
