@@ -8,7 +8,7 @@ public class printNumberPattern {
 		int Y;
 		for(X=1;X<=5;X++) {
 			for(Y=1;Y<=X;Y++) {
-				System.out.println(Y+" ");
+				System.out.print(Y+" ");
 			}
 			System.out.println();
 		}
